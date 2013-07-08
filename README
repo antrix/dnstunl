@@ -1,0 +1,10 @@
+Simple utility to generate a [dnsmasq][1] configuration file for use with services like Tunlr, Unblock-Us and UnoDNS.
+
+Usage: Configure the handful of constants at the top of the makemasq.py script and then run it. 
+
+Copyright (c) 2013 Deepak Sarda
+
+This and other files in this directory are licensed under the MIT license. 
+See LICENSE file for details.
+
+[1]: http://www.thekelleys.org.uk/dnsmasq/doc.html
