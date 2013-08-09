@@ -14,11 +14,15 @@ SOURCE_FILE = 'domains.txt'
 TARGET_FILE = 'dnsmasq.conf'
 
 BYPASS_NAMESERVERS = ('69.197.169.9', '192.95.16.109')
-DEFAULT_NAMESERVERS = ('202.73.37.3', '202.73.37.11')
+# Viewqwest
+# DEFAULT_NAMESERVERS = ('202.73.37.3', '202.73.37.11')
+# OpenDNS
+DEFAULT_NAMESERVERS = ('208.67.220.220', '208.67.222.222')
 ADDITIONAL_DOMAINS = ('tunlr.net',)
 
 PREFIX_CONFIG = """domain-needed
-cache-size=1000
+all-servers
+cache-size=5000
 """
 
 def write_server_lines(fp, servers, domains):
