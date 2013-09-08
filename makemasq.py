@@ -13,16 +13,22 @@ See LICENSE file for details.
 SOURCE_FILE = 'domains.txt'
 TARGET_FILE = 'dnsmasq.conf'
 
-BYPASS_NAMESERVERS = ('69.197.169.9', '192.95.16.109')
+# tunlr.net
+# BYPASS_NAMESERVERS = ('69.197.169.9', '192.95.16.109')
+# unodns
+BYPASS_NAMESERVERS = ('122.248.238.233', '14.136.236.187')
+
 # Viewqwest
 # DEFAULT_NAMESERVERS = ('202.73.37.3', '202.73.37.11')
 # OpenDNS
 DEFAULT_NAMESERVERS = ('208.67.220.220', '208.67.222.222')
-ADDITIONAL_DOMAINS = ('tunlr.net',)
+
+ADDITIONAL_DOMAINS = ('tunlr.net', 'unotelly.com')
 
 PREFIX_CONFIG = """domain-needed
 all-servers
 cache-size=5000
+strict-order
 """
 
 def write_server_lines(fp, servers, domains):
