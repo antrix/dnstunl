@@ -21,7 +21,8 @@ TARGET_FILE = 'dnsmasq.conf'
 # BYPASS_NAMESERVERS = dict(
 #                         US=('69.197.169.9', '192.95.16.109'),
 #                         UK=('69.197.169.9', '192.95.16.109'),
-#                         CA=('69.197.169.9', '192.95.16.109')
+#                         CA=('69.197.169.9', '192.95.16.109'),
+#                         CDN=('202.73.37.3', '202.73.37.11')
 #                         )
 # unodns
 BYPASS_NAMESERVERS = dict(
@@ -44,6 +45,8 @@ BYPASS_NAMESERVERS = dict(
 DEFAULT_NAMESERVERS = ('208.67.220.220', '208.67.222.222')
 # Google Public DNS : https://developers.google.com/speed/public-dns/
 # DEFAULT_NAMESERVERS = ('8.8.8.8', '8.8.4.4')
+# Viewqwest
+# DEFAULT_NAMESERVERS = ('202.73.37.3', '202.73.37.11')
 
 # Some domains you want to add always, regardless of what is in the input file
 ADDITIONAL_DOMAINS = ('US,tunlr.net', 'US,unotelly.com')
@@ -83,7 +86,7 @@ def write_server_lines(fp, servers, domains):
         # And the domain from the next
         domain = domain.split(',')[1]
         # Loop over the servers of a region, and add them to the domain
-        for ns in servers[region]:
+        for ns in servers.get(region, DEFAULT_NAMESERVERS):
             fp.write('server=/%s/%s\n' % (domain, ns))
     fp.write('\n')
 

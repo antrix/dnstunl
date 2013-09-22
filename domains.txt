@@ -1,3 +1,17 @@
+CDN,akamai.net
+CDN,akamaiedge.net
+CDN,akamaihd.net
+CDN,cache.vevo.com
+CDN,cloudflare.net
+CDN,cloudfront.com
+CDN,cloudfront.net
+CDN,edgesuite.net
+CDN,gstatic.com
+CDN,googleusercontent.com
+CDN,jtvnw.net
+CDN,llnwd.net
+CDN,netdna-cdn.com
+CDN,ytimg.com
 US,abc.com
 US,adnxs.com
 US,adultswim.com
